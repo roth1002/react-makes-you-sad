@@ -2,7 +2,7 @@ digraph {
   unhappy[
     shape="box",
     style=rounded,
-    label="React makes you sad."
+    label="React 讓你難過"
   ]
   unhappy -> are_you_using_react_boilerplates;
 
@@ -10,45 +10,37 @@ digraph {
 
   are_you_using_react_boilerplates[
     shape="diamond",
-    label="Are you learning
-    React by copying from the
-    boilerplate projects?"
+    label="你是通過複製範例
+    學習 React 嗎？"
   ]
-  are_you_using_react_boilerplates -> boilerplates_dont_teach[label="yes"]
-  are_you_using_react_boilerplates -> steal_from_boilerplates[label="no"]
+  are_you_using_react_boilerplates -> boilerplates_dont_teach[label="是"]
+  are_you_using_react_boilerplates -> steal_from_boilerplates[label="否"]
 
   boilerplates_dont_teach[
     shape="box",
-    label="Learning React by copying boilerplates
-    is like learning to cook by eating food in
-    fancy restaurants. It doesn’t work. You need
-    to start with basics and ignore the fear of
-    missing out. It’s unfounded. People create
-    boilerplates to show off what they built
-    or learned, not to help you learn. They are
-    created by and for power users, and are often
-    way more experimental than they care to admit.
-    Boilerplates compete for attention which leads
-    to more bloat. If you’re in it for React, learn
-    it in the order Pete Hunt described in his guide:
-    https://github.com/petehunt/react-howto.
-    Look at boilerplates no sooner than you can
-    create your own."
+    label="跟著範例學 React 就好像在一家超棒的
+    餐廳里通過點菜來學做飯一樣。這壓根沒用。你得從基礎
+    學起，不要怕有所遺漏。這沒有根據。人們之所以建立
+    範例是為了展示他們所創造的、學到的，而不是為了
+    幫助你學習。範例是為更有經驗的人準備的，並且
+    通常要比被承認的更具試驗性。範例彼此競爭，為了
+    獲得更多的注意力往往有所誇大。如果你確實對 React
+    感興趣，你應該按照　Pete Hunt 的指南來學習:
+    https://github.com/petehunt/react-howto.
+    在你能自己建立範例前不要參考網路上找的。"
   ]
   boilerplates_dont_teach -> are_you_using_flux
 
   steal_from_boilerplates[
     shape="box",
-    label="While boilerplates are not a good
-    way to learn the technologies they combine,
-    they are useful to see how these technologies
-    can be tied together *after* you’re comfortable
-    with each of them independently. It’s a great
-    way to discover new technologies but you
-    shouldn’t feel obligated to use them at all.
-    Don’t give up on boilerplates completely.
-    Just keep in mind that a boilerplate is
-    a bag of tricks, not a solid base for your app."
+    label="雖然範例對於學習它綜合的各種技術
+    不是一個很好的方法，但是當你掌握這裡的每一項
+    技術後，示例項目能夠幫助你了解這些技術是如何
+    協同工作的。這是發現新技術的好途徑，但是不要
+    覺得有使用的義務。不過也不要把示例項目束之高閣，
+    只要記住範例是各種技巧的展示手法，並不能
+    被當做應用堅實的基礎。
+    "
   ]
   steal_from_boilerplates -> are_you_using_flux
 
@@ -56,47 +48,40 @@ digraph {
 
   are_you_using_flux[
     shape="diamond",
-    label="Are you using
-    a Flux library
-    (or Redux)?"
+    label="你使用 Flux
+    （或者 Redux 嗎）？"
   ]
-  are_you_using_flux -> is_too_much_flux[label="yes"]
-  are_you_using_flux -> is_not_enough_flux[label="no"]
+  are_you_using_flux -> is_too_much_flux[label="是"]
+  are_you_using_flux -> is_not_enough_flux[label="否"]
 
   is_too_much_flux[
     shape="diamond",
-    label="Does it add
-    a lot of boilerplate
-    for no obvious gain?"
+    label="它是否即使有很多的 boilerplate
+    也沒有明顯的改善你的程式碼架構？"
   ]
-  is_too_much_flux -> remove_flux[label="yes"]
-  is_too_much_flux -> are_you_using_bundler[label="no"]
+  is_too_much_flux -> remove_flux[label="是"]
+  is_too_much_flux -> are_you_using_bundler[label="否"]
 
   is_not_enough_flux[
     shape="diamond",
-    label="Do you have a few
-    bloated stateful components at the top
-    of your component hierarchy that are
-    often the source of bugs?"
+    label="你是否有一些最頂層且狀態複雜
+    的 Components 經常出現 Bugs?"
   ]
-  is_not_enough_flux -> add_flux[label="yes"]
-  is_not_enough_flux -> are_you_using_bundler[label="no"]
+  is_not_enough_flux -> add_flux[label="是"]
+  is_not_enough_flux -> are_you_using_bundler[label="否"]
 
   add_flux[
     shape="box",
-    label="Consider adding a Flux library.
-    It can help externalize the state
-    shared between many components
-    and update it consistently."
+    label="考慮使用 Flux 的手法。它能夠把 Components 間共享的
+    state 轉移到外部，並用一致的方式來更新。"
   ]
   add_flux -> are_you_using_bundler
 
   remove_flux[
     shape="box",
-    label="Remove the Flux library.
-    Get a good feel for structuring
-    apps in vanilla React by reading
-    “Thinking in React” in the official docs."
+    label="移除 Flux。通過閱讀官方文檔
+     “Thinking in React”，來體會用原生的 React
+     怎麼建立一個結構良好的應用。"
   ]
   remove_flux -> are_you_using_bundler
 
@@ -104,50 +89,45 @@ digraph {
 
   are_you_using_bundler[
     shape="diamond",
-    label="Are you using
-    a JavaScript bundler
-    (e.g. Webpack, Browserify)?"
+    label="你在使用 JavaScript 打包工具嗎
+    (例如 Webpack, Browserify)?"
   ]
-  are_you_using_bundler -> are_you_working_on_production_app_with_bundler[label="yes"]
-  are_you_using_bundler -> are_you_working_on_production_app_without_bundler[label="no"]
+  are_you_using_bundler -> are_you_working_on_production_app_with_bundler[label="是"]
+  are_you_using_bundler -> are_you_working_on_production_app_without_bundler[label="否"]
 
   are_you_working_on_production_app_with_bundler[
     shape="diamond",
-    label="Are you working
-    on a production app?"
+    label="正在做一個要上線的產品嗎?"
   ]
-  are_you_working_on_production_app_with_bundler -> do_you_know_es2015[label="yes"]
-  are_you_working_on_production_app_with_bundler -> remove_bundler[label="no"]
+  are_you_working_on_production_app_with_bundler -> do_you_know_es2015[label="是"]
+  are_you_working_on_production_app_with_bundler -> remove_bundler[label="否"]
 
   are_you_working_on_production_app_without_bundler[
     shape="diamond",
-    label="Are you working
-    on a production app?"
+    label="正在做一個要上線的產品嗎?"
   ]
-  are_you_working_on_production_app_without_bundler -> add_bundler[label="yes"]
-  are_you_working_on_production_app_without_bundler -> do_you_know_es2015[label="no"]
+  are_you_working_on_production_app_without_bundler -> add_bundler[label="是"]
+  are_you_working_on_production_app_without_bundler -> do_you_know_es2015[label="否"]
 
   add_bundler[
     shape="box",
-    label="Add a bundler as a build step
-    to keep dependencies manageable
-    and serve the JavaScript code efficiently.
-    Use Google Page Speed insights tool
-    to gauge how well you are doing.
-    Remember to minify and envify
-    your code."
+    label="在構建步驟添加一個打包的過程
+    能夠很好的管理依賴並且更有效地傳輸
+    JavaScript 程式碼。
+    使用 Google Page Speed 來測量做得
+    怎麼樣，別忘了壓縮和環境化你的代碼。"
   ]
   add_bundler -> do_you_know_es2015
 
   remove_bundler[
     shape="box",
-    label="There is no need for a bundler
-    if you are just learning React.
-    Copy https://github.com/jarsbe/react-simple
-    and start hacking with no build step.
-    Use <script> tags until you are comfortable
-    with React and want to learn more about module
-    systems and different bundlers."
+    label="如果你只是學習 React 没有必要
+    使用打包工具。直接 clone 這個專案
+    https://github.com/jarsbe/react-simple
+    開始你的學習，還不用考虑打包的問題。
+    你可以一直使用 <Script> 標籤直到熟悉
+    React，然後再了解一下模組系统和不同
+    的打包工具。"
   ]
   remove_bundler -> do_you_know_es2015
 
@@ -155,25 +135,23 @@ digraph {
 
   do_you_know_es2015[
     shape="diamond",
-    label="Do you feel
-    comfortable using ES2015 features
-    (e.g. classes and fat arrows)?"
+    label="你了解並且能夠接受 ES2015
+    的特性吗
+    (比如 classes 和 fat arrows)?"
   ]
-  do_you_know_es2015 -> use_es5[label="no"]
-  do_you_know_es2015 -> are_you_using_dangerous_features[label="yes"]
+  do_you_know_es2015 -> use_es5[label="否"]
+  do_you_know_es2015 -> are_you_using_dangerous_features[label="是"]
 
   use_es5[
     shape="box",
-    label="Don’t use ES2015 yet.
-    You don’t need it to learn React.
-    Third-party libraries will often use
-    ES2015 syntax in their documentation but
-    you don’t need third-party libraries when
-    you are just learning React itself.
-    When you feel like updating your JavaScript
-    knowledge, https://leanpub.com/understandinges6/read
-    is an amazing guide. Use http://babeljs.io/repl
-    to verify your assumptions."
+    label="先别用 ES2015。學習 React 不需要它。
+    第三方函式庫在原碼裡通常使用 ES2015 的語法，
+    但是如果你只是學習 React 還用不到第三方函式庫。
+    當你想要更新你的 JavaScript 知識時：
+    https://leanpub.com/understandinges6/read
+    是超棒的指南.使用在線工具：
+    http://babeljs.io/repl
+    來驗證你的各種假設。"
   ]
   use_es5 -> do_you_update_packages_asap
 
@@ -181,28 +159,25 @@ digraph {
 
   are_you_using_dangerous_features[
     shape="diamond",
-    label="Are you using
-    experimental language features
-    that didn’t make it into ES2015
-    (e.g. decorators)?"
+    label="你在使用一些沒有加入到
+    ES2015 的試驗特性吗
+    (例如 decorators)?"
   ]
-  are_you_using_dangerous_features -> can_you_spend_days_on_your_tooling[label="yes"]
-  are_you_using_dangerous_features -> do_you_update_packages_asap[label="no"]
+  are_you_using_dangerous_features -> can_you_spend_days_on_your_tooling[label="是"]
+  are_you_using_dangerous_features -> do_you_update_packages_asap[label="否"]
 
   can_you_spend_days_on_your_tooling[
     shape="diamond",
-    label="Can you spend days on
-    fixing your tooling every few weeks
-    due to bugs, incompatibilities,
-    and standard changes?"
+    label="您能每隔幾週就花上幾天时间
+    来修復工具鏈導致的 Bug，不相容
+    和標準的變動嗎？"
   ]
-  can_you_spend_days_on_your_tooling -> do_you_update_packages_asap[label="yes"]
-  can_you_spend_days_on_your_tooling -> stick_to_es2015[label="no"]
+  can_you_spend_days_on_your_tooling -> do_you_update_packages_asap[label="能"]
+  can_you_spend_days_on_your_tooling -> stick_to_es2015[label="不能"]
 
   stick_to_es2015[
     shape="box",
-    label="Stick to using at most ES2015,
-    JSX, and object spread operator."
+    label="堅持只用 ES2015，JSX 和属性傳遞操作。"
   ]
   stick_to_es2015 -> do_you_update_packages_asap
 
@@ -210,40 +185,33 @@ digraph {
 
   do_you_update_packages_asap[
     shape="diamond",
-    label="Do you update to new
-    major versions of your dependencies
-    as they come out?"
+    label="當依賴的庫有重大版本
+    更新時你會跟上嗎？"
   ]
-  do_you_update_packages_asap -> give_it_two_months[label="yes"]
-  do_you_update_packages_asap -> consider_updating_react[label="no"]
+  do_you_update_packages_asap -> give_it_two_months[label="会"]
+  do_you_update_packages_asap -> consider_updating_react[label="不会"]
 
   give_it_two_months[
     shape="box",
-    label="Unless we are talking about React
-    which is tested heavily before every release,
-    consider slowing down rate of package updates.
-    You can try new versions of the dependencies but
-    it’s best to keep them in a branch for a couple of
-    months until the community finds and fixes the
-    most common issues. Don’t make decisions based on
-    the fear of missing out! When looking for older docs,
-    don’t forget to check tagged releases on GitHub, e.g.
+    label="除非是 React 這種每次發布前經過嚴格測試的函式庫，
+    否則你應該讓更新的速度慢下來。
+    你可以在分支裡嘗試依賴函式庫的新版本，
+    直到社區發現和修復了絕大部分的問題。
+    不要因為怕落後就做決定。
+    要查找舊版本的文檔，別忘了查看 Github 上
+    带 Tag 的發布版本，比如
     https://github.com/reactjs/react-router/tree/0.13.x/doc"
   ]
   give_it_two_months -> are_you_still_sad
 
   consider_updating_react[
     shape="box",
-    label="This is a good call.
-    However we encourage you to
-    try (in a branch!) new versions of
-    React as soon as they come out.
-    Unlike many community packages,
-    they are tested heavily by Facebook.
-    Keep an eye on the release notes
-    as they link to the codemods that
-    automate parts of the migration process
-    for you."
+    label="這是個好決定。
+    不過我們還是鼓勵你在 React 新版本出來的時候
+    （在分支裡）嘗試它。與社區模塊不同，React
+    經過了 Facebook 的嚴格測試。
+    要留意發布日誌，因為它們通常連接到能夠自動
+    化一部分遷移過程的 codemods。"
   ]
   consider_updating_react -> are_you_still_sad
 
@@ -251,34 +219,39 @@ digraph {
 
   are_you_still_sad[
     shape="diamond",
-    label="Are you still sad?"
+    label="你還難過嗎？"
   ]
-  are_you_still_sad -> rant[label="yes"];
-  are_you_still_sad -> happy[label="no"];
+  are_you_still_sad -> rant[label="是"];
+  are_you_still_sad -> happy[label="否"];
 
   rant[
     shape="box",
-    label="Write a constructive blog post
-    about the problems you encountered.
-    Refrain from personal attacks.
-    Be polite. Help the community
-    figure out the solutions. Consider
-    another stack that better suits
-    your needs (e.g. Ember)."
+    label="
+    把你遇到的問題寫成有建設性的博客，
+    避免人身攻擊。
+    有禮貌。
+    幫助社區來尋找解決方案。
+    考慮一下其它更符合你的需求的技術
+    （比如 Ember）。
+    "
   ]
   rant -> happy
 
   happy[
     shape="box",
-    label="React makes you happy!
-    Or, at least, it doesn’t make you that sad anymore."
+    label="React 讓你愉快開發！又或者至少不再難過地開發。"
   ]
   happy -> share
 
   share [
     shape="box",
     style=rounded,
-    label="Share this flowchart: http://bit.ly/react-makes-you-sad.
-    Based on and inspired by https://github.com/petehunt/react-howto."
+    label="分享這個流程圖
+    https://github.com/gaearon/react-makes-you-sad
+    基於和啟發
+    https://github.com/petehunt/react-howto
+    翻體中文翻译
+    https://github.com/roth1002/react-makes-you-sad
+    "
   ]
 }
